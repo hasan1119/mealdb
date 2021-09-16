@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onner Khabar Niye Aslam</title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        /* bootstrap icon */
+        @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="fs-4 text-success navbar-brand" href="index.html">
+                <i class="bi bi-shop"></i>
+                Hungry zone
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="ms-auto navbar-nav">
+                    <li class="nav-item">
+                        <a class="text-success nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-success nav-link" href="#">Items</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="text-success nav-link" href="#">Pricing</a>
+                    </li>
+                    <li style="cursor: pointer" class="nav-item" data-bs-toggle="modal" data-bs-target="#cartitem">
+                        <div class="modal fade" id="cartitem" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Your Order</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body" id="cart-items">
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <button type="button" class="btn btn-success">Order Now</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-success nav-link">
+                            <i class="block bi bi-cart-plus"></i>
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <h2 class="text-center mt-5">Search Your Favourite Foods</h2>
+    <p class="text-center">Onner Khabar Churi Korlam</p>
+    <div class="container">
+        <div class="row mx-auto row-cols-1 row-cols-md-2 row-cols-lg-4">
+            <div class="input-group mb-3 mx-auto w-100">
+                <input type="text" class="form-control" id="name" placeholder="Search Food Name"
+                    aria-describedby="button-addon2">
+                <button onclick="searchFood()" class="btn btn-success" type="button" id="button-search">Search
+                    Food</button>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div id="erorr-message">
+
+        </div>
+        <div id="not-found">
+
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="text-center mx-auto" id="spiner">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+            <p id="welcome" class="text-success fs-4">Welcome to hungry zone. Search by your desire food name</p>
+        </div>
+        <div class="row mx-auto row-cols-1 row-cols-md-2 row-cols-lg-4 gx-lg-3 gx-md-5 gx-4 gy-5" id="show-category">
+
+        </div>
+    </div>
+    <div class="container mt-5 mb-5">
+        <div class="row mx-auto row-cols-1 row-cols-md-2 row-cols-lg-4 gx-lg-3 gx-md-5 gx-4 gy-5" id="search-result">
+
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body" id="modal">
+                    ...
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- for add to cart information -->
+    <div id="cart-add-info" style="display: none; z-index: 9999 !important"
+        class="mt-5 mx-auto fixed-top w-50 rounded-circle rounded-pill">
+        <div class="text-center alert alert-warning rounded-pill">
+            Item added to cart... Enjoy your meal. 🍲
+        </div>
+    </div>
+    <footer>
+        <p class="text-success text-center">Development By Monir Hossain</p>
+    </footer>
+    <!-- bootstrap cdn js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
